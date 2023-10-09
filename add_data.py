@@ -11,4 +11,4 @@ def add_row():
     with open(f'db/data_{nf}.txt', 'a', encoding='utf-8') as file:
         file.write(f'{now_number_row};{name};'
                    f'{surname};{birthdate};{town}\n')
-    print("Данные успешно записаны!")
+    print("Данные успешно записаны!\n")

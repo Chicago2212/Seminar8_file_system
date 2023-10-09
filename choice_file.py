@@ -8,4 +8,5 @@ def choice_number_file():
     while number < 1 or number > 2:
         number = int(input("Ошибка!!!\n"
                            "Введите цифру 1 или 2: "))
+
     return number
