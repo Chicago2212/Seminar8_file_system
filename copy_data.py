@@ -9,7 +9,7 @@ def copy(input_mode):
     with open(f'Seminar8_file_system/db/data_{number_from}.txt', 'r', encoding='utf-8') as file_from: data_from = file_from.readlines()
 
     count_rows = len(data_from)
-
+    input_mode = user_enter()
     array_rows = []  # массив, в котором будут либо номера строк, либо диапазон.
 
     if input_mode == 2: 
@@ -19,8 +19,8 @@ def copy(input_mode):
     else: 
         row1 = input("Введите номер(-а) строк(-и) через ',' : ")
         for i in range(array_rows.append(int(row1.split(', ')))): 
-            if array_rows[i] > count_rows: array_rows[i] = int(input(f"{i}-ый элемент больше кол-ва строк из исходного файла! "
-                                                                    f"Введите его повторно: "))
+            if array_rows[i] > count_rows: 
+                array_rows[i] = int(input(f"{i}-ый элемент больше кол-ва строк из исходного файла! Введите его повторно: "))
 
 
     with open(f'Seminar8_file_system/db/data_{number_in}.txt', 'w+', encoding='utf-8') as file_in: 
