@@ -2,13 +2,15 @@ from delete_data import delete_row
 from change_data import change_row
 from add_data import add_row
 from print_data import print_file
+from copy import  copy_data
 
 
 def check_number(n):
-    while n < 1 or n > 5:
+    while n < 0 or n > 5:
         n = int(input("Ошибка, такого номера команды не "
-                      "существует! Введите цифру от 1 до 5\n"
+                      "существует! Введите цифру от 0 до 5\n"
                       "Выберите функцию:\n"
+                      "0. Копирование\n"
                       "1. Добавить\n"
                       "2. Удалить\n"
                       "3. Изменить\n"
@@ -23,6 +25,7 @@ def start_menu():
     while command != 5:
         command = int(input("Доброго времени суток!\n"
                             "Выберите функцию:\n"
+                            "0. Копирование\n"
                             "1. Добавить\n"
                             "2. Удалить\n"
                             "3. Изменить\n"
@@ -30,7 +33,9 @@ def start_menu():
                             "5. Выход\n"
                             "Введите номер команды: "))
         command = check_number(command)
-        if command == 1:
+        if command == 0:
+            copy_data()
+        elif command == 1:
             add_row()
         elif command == 2:
             delete_row()
