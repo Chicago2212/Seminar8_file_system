@@ -15,6 +15,6 @@ def change_row():
     birthdate = input("Введите дату рождения: ")
     town = input("Введите город: ")
     data[number_row - 1] = f'{number_row};{name};{surname};{birthdate};{town}\n'
-    with open(f'db/data_{nf}.txt', 'w', encoding='utf-8') as file:
+    with open(f'Seminar8_file_system/db/data_{nf}.txt', 'w', encoding='utf-8') as file:
         file.writelines(data)
     print("Данные успешно изменены!")
