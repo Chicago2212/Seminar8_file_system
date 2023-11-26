@@ -5,7 +5,7 @@ def delete_row():
     data, nf = data_file()
     count_rows = len(data)
     if count_rows == 0:
-        print("Файл пусто!")
+        print("Файл пустой!")
     else:
         number_row = int(input(f"Введите номер строки "
                                f"от 1 до {count_rows}: "))
