@@ -1,5 +1,6 @@
 from delete_data import delete_row
 from change_data import change_row
+from copy_file import copy_row
 from add_data import add_row
 from print_data import print_file
 
@@ -40,5 +41,8 @@ def start_menu():
             change_row()
         elif command == 4:
             print_file()
+        elif command == 5:
+            copy_row()
+    
     print("Спасибо, что воспользовались нашими услугами!\n"
-          "Всего доброго! Приходите к нам ещё :)")
+          "Всего доброго! Приходите к нам ещё :) Ведь у нас ведет семинары самый крутой преподаватель Денис Макарцев! :))")
