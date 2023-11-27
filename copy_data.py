@@ -1,9 +1,12 @@
 from return_data_file import data_file
 
-
-def delete_row():
+def copy_row():
     data, nf = data_file()
     count_rows = len(data)
+    nf_b = 3 - nf
+    with open(f'D:\phyton\Seminar8_file_system_1\db\data_{nf_b}.txt', 'r', encoding='utf-8') as file:
+        data_b = file.readlines()
+    number_row_b = len(data_b) + 1
     if count_rows == 0:
         print("Файл пустой!")
     else:
@@ -13,12 +16,9 @@ def delete_row():
             number_row = int(input(f"Ошибка!"
                                    f"Введите номер строки "
                                    f"от 1 до {count_rows}: "))
-        del data[number_row - 1]
-        data = [f'{i + 1};{data[i].split(";")[1]};'
-                f'{data[i].split(";")[2]};'
-                f'{data[i].split(";")[3]};'
-                f'{data[i].split(";")[4]}'
-                for i in range(len(data))]
-        with open(f'db/data_{nf}.txt', 'w', encoding='utf-8') as file:
-            file.writelines(data)
-        print("Строка успешно удалена!")
+        row_new = data[number_row-1].split(';')
+        with open(f'D:\phyton\Seminar8_file_system_1\db\data_{nf_b}.txt', 'a', encoding='utf-8') as file:
+            file.write(f'{number_row_b};{row_new[1]};{row_new[2]};{row_new[3]};{row_new[4]}')
+        
+
+
